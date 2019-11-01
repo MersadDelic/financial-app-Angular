@@ -6,20 +6,27 @@ import { BudgetComponent } from './budget/budget.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import {AuthModule} from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BudgetComponent
+    BudgetComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

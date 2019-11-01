@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  margin-top: 100px
+}
+
+h5 {
+
+  position: absolute;
+  bottom: 50px;
+  left: 45%;
+
+}
+.navbar {
+  position: absolute;
+  left: 46%;
+  top: 50%;
+
+}
+
+a {
+
+  color: #383838;
+
+  font-size: 25px;
+
+}
+a:hover {
+  font-weight: bold;
+  color: #383838;
+}
+
