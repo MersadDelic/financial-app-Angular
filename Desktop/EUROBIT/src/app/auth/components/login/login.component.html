@@ -2,14 +2,13 @@
 <div class="row">
   <div class="col-md-6 offset-md-3 mt-4">
     <h3>Login</h3>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <form #f="ngForm" (ngSubmit)="login()">
       <div class="form-group">
         <label for="loginUsername">Username</label>
         <input type="text"
                name="username"
-               ngModel
+               [(ngModel)]="username"
                required
-               #username="ngModel"
                class="form-control"
                id="loginUsername"
                placeholder="Enter username">
@@ -18,9 +17,8 @@
         <label for="loginPassword">Password</label>
         <input type="password"
                name="password"
-               ngModel
+               [(ngModel)]="password"
                required
-               #password="ngModel"
                class="form-control"
                id="loginPassword"
                placeholder="Password">

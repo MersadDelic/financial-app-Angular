@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {BudgetService} from '../budget.service';
-import {Budget} from '../budget';
+import {BudgetService} from '../services/budget.service';
+import {Budget} from '../models/budget';
 
 @Component({
   selector: 'app-budget',
@@ -10,15 +10,15 @@ import {Budget} from '../budget';
 })
 export class BudgetComponent implements OnInit {
 
-  budgetList: Budget [] = [];
-  budget: Budget = new Budget();
+  // budgetList: Budget [] = [];
+  budget: Budget = new Budget();  /* new Budget() --> prazan objekat */
   submitted = false;
 
   constructor(private budgetService: BudgetService, private router: Router) {
   }
 
   ngOnInit() {
-    this.getBudgets();
+   // this.getBudgets();
   }
 
   getBudget(id: number) {
@@ -30,18 +30,20 @@ export class BudgetComponent implements OnInit {
     );
   }
 
-  getBudgets() {
+  /*getBudgets() {
     this.budgetService.getBudgets().subscribe(
       res => {
         this.budgetList = res;
       },
       error1 => console.log(error1)
     );
-  }
+  }*/
 
   saveBudget() {
     this.budgetService.createBudget(this.budget)
-      .subscribe(data => console.log(data), error => console.log(error));
+      .subscribe(
+        data => console.log(data),
+        error => console.log(error));
     // this.budget = new Budget();
   }
 

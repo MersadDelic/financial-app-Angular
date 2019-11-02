@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "http://ebit-front-test.herokuapp.com",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/api" : "http://ebit-front-test.herokuapp.com"},
+    "changeOrigin": true
+  }
+}

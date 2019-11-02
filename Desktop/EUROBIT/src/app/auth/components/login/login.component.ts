@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +8,22 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username: string;
+  password: string;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
-  onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+
+  login() {
+   this.authService.authenticate(this.username, this.password).subscribe (
+    res => {
+      console.log('uspjesan login');
+      console.log(res);
+      localStorage.setItem('token', res.token);
+    },
+      error1 => console.log('neuspjesan login' + error1)
+  );
   }
 }
