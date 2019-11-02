@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     res => {
       console.log('uspjesan login');
       console.log(res);
-      localStorage.setItem('token', res.token);
+      localStorage.setItem('token', res.token);  // U slucaju uspjeha pohrani 'token' u localStorage //
     },
       error1 => console.log('neuspjesan login' + error1)
   );

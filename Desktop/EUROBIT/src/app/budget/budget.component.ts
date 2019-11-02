@@ -23,8 +23,8 @@ export class BudgetComponent implements OnInit {
 
   getBudget(id: number) {
     this.budgetService.getBudget(id).subscribe(
-      budget => {
-        this.budget = budget;
+      res => {
+        this.budget = res;
       },
       error => console.log(error)
     );

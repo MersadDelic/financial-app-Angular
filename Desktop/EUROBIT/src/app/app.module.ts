@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BudgetComponent } from './budget/budget.component';
 import {FormsModule} from '@angular/forms';
@@ -12,7 +12,7 @@ import {JwtModule} from '@auth0/angular-jwt';
 
 
 export function tokenGetter() {
-  return localStorage.getItem('token');
+  return localStorage.getItem('token');  // Dobavljanje tokena iz localStorage //
 }
 
 @NgModule({
@@ -29,6 +29,10 @@ export function tokenGetter() {
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
+
+    /**
+     * Konfiguracija za JWT autentikaciju !
+     */
     JwtModule.forRoot({
       config: {
         tokenGetter,
