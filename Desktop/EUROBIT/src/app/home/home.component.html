@@ -1,18 +1,35 @@
-<h1>Dobrodošli</h1>
+<!--<h1>Dobrodošli</h1>
 <h5>Mersad Delić</h5>
 
-<div class="navbar"
+<div class="navbar navbar-light bg-light"
      id="navbarNav">
   <ul class="navbar-nav ml-auto headerNav">
     <li>
-      <a class="nav-link"
+      <a class="navbar-brand"
          [routerLink]="['register']"
          routerLinkActive="active">Register</a>
+
     </li>
     <li>
-      <a class="nav-link"
+      <a class="navbar-brand"
          [routerLink]="['login']"
          routerLinkActive="active">Login</a>
     </li>
   </ul>
+</div>-->
+
+<div class="row home-main-row">
+  <div class="col-md-6 mt-4 pt-5 pl-5">
+    <h3>Dobrodošli</h3>
+<br>
+    <a [routerLink]="['register']"
+       routerLinkActive="router-link-active"
+       class="btn btn-info">Register<i class="fas fa-user-plus"></i></a>
+<p> </p>
+    <a [routerLink]="['login']"
+       routerLinkActive="router-link-active"
+       class="btn btn-info">Login<i class="fas fa-user-plus"></i></a>
+
+  </div>
+
 </div>
