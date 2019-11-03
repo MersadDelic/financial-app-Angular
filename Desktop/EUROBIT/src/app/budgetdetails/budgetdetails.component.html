@@ -1,1 +1,10 @@
-<p>budgetdetails works!</p>
+<div class="bdetails" *ngIf="budget">
+
+  <h3>{{budget.name | uppercase}} Details</h3> <br>
+  <div><span><h4>Budget name: </h4></span><p class="pdetail">{{budget.name}}</p></div>
+  <div><span><h4>Budget Amount: </h4></span><p class="pdetail" >{{budget.amount}} KM</p></div>
+  <div><span><h4>Date from: </h4></span><p class="pdetail">{{budget.date_from}}</p></div>
+  <div><span><h4>Date to: </h4></span><p class="pdetail">{{budget.date_to}}</p></div>
+
+
+</div>

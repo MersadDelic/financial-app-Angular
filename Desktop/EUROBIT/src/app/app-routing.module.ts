@@ -5,10 +5,12 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import { BudgetlistComponent } from './budgetlist/budgetlist.component';
 import {BudgetComponent} from './budget/budget.component';
+import {BudgetdetailsComponent} from './budgetdetails/budgetdetails.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'budgetlist', component: BudgetlistComponent},
-  { path: 'createbudget', component: BudgetComponent}
+  { path: 'createbudget', component: BudgetComponent},
+  { path: 'budget/:id', component: BudgetdetailsComponent},
 
 ];
 

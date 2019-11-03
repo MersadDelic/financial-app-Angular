@@ -1,11 +1,13 @@
 
 
-<div class="list-group">
+<div style="width: 500px; position: relative; left: 25%; top:50px" class="list-group">
   <h4 class="list-group-item list-group-item-action active">
     My budgets
   </h4>
   <div *ngFor="let budget of budgetList">
-  <a style="font-size: 20px" href="#" class="list-group-item list-group-item-action">{{ budget.name }}</a>
+  <a style="font-size: 20px; font-weight: bold; color: #295b90"
+     routerLink="/budget/{{budget.id}}" class="list-group-item list-group-item-action">
+     {{ budget.name }}</a>
   </div>
 </div>
 
