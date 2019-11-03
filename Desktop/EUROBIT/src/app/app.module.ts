@@ -10,6 +10,7 @@ import {AuthModule} from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 import {JwtModule} from '@auth0/angular-jwt';
 import { BudgetlistComponent } from './budgetlist/budgetlist.component';
+import { BudgetdetailsComponent } from './budgetdetails/budgetdetails.component';
 
 
 export function tokenGetter() {
@@ -22,6 +23,7 @@ export function tokenGetter() {
     BudgetComponent,
     HomeComponent,
     BudgetlistComponent,
+    BudgetdetailsComponent,
 
   ],
   imports: [

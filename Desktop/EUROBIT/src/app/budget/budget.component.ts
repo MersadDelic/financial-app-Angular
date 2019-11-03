@@ -10,7 +10,7 @@ import {Budget} from '../models/budget';
 })
 export class BudgetComponent implements OnInit {
 
-  // budgetList: Budget [] = [];
+  budgetList: Budget [] = [];
   budget: Budget = new Budget();  /* new Budget() --> prazan objekat */
   submitted = false;
 
@@ -36,13 +36,13 @@ export class BudgetComponent implements OnInit {
       .subscribe(
         data => console.log(data),
         error => console.log(error));
-   // this.budget = new Budget();
   }
 
   onSubmit() {
     this.submitted = true;
     this.saveBudget();
     this.gotoList();
+    this.budgetList.push(this.budget);
   }
   gotoList() {
     this.router.navigate(['budgetlist']);
