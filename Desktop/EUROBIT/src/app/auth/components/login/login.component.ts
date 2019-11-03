@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,5 +25,10 @@ export class LoginComponent implements OnInit {
     },
       error1 => console.log('neuspjesan login' + error1)
   );
+   this.gotoHome();
+  }
+
+  gotoHome() {
+    this.router.navigate(['']);
   }
 }

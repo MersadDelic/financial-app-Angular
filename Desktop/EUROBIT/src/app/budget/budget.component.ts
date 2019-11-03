@@ -18,7 +18,7 @@ export class BudgetComponent implements OnInit {
   }
 
   ngOnInit() {
-   // this.getBudgets();
+
   }
 
   getBudget(id: number) {
@@ -30,25 +30,21 @@ export class BudgetComponent implements OnInit {
     );
   }
 
-  /*getBudgets() {
-    this.budgetService.getBudgets().subscribe(
-      res => {
-        this.budgetList = res;
-      },
-      error1 => console.log(error1)
-    );
-  }*/
 
   saveBudget() {
     this.budgetService.createBudget(this.budget)
       .subscribe(
         data => console.log(data),
         error => console.log(error));
-    // this.budget = new Budget();
+   // this.budget = new Budget();
   }
 
   onSubmit() {
     this.submitted = true;
     this.saveBudget();
+    this.gotoList();
+  }
+  gotoList() {
+    this.router.navigate(['budgetlist']);
   }
 }

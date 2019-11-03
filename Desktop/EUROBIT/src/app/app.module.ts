@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
 import { HomeComponent } from './home/home.component';
 import {JwtModule} from '@auth0/angular-jwt';
+import { BudgetlistComponent } from './budgetlist/budgetlist.component';
 
 
 export function tokenGetter() {
@@ -20,6 +21,7 @@ export function tokenGetter() {
     AppComponent,
     BudgetComponent,
     HomeComponent,
+    BudgetlistComponent,
 
   ],
   imports: [
