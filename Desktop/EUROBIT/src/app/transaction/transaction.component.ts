@@ -10,9 +10,11 @@ import {Budget} from '../models/budget';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
-  budget: Budget = new Budget();
+
+
   transaction: Transaction = new Transaction();
   submitted = false;
+
   constructor(private transactionService: TransactionService, private router: Router) { }
 
   ngOnInit() {
@@ -27,15 +29,15 @@ export class TransactionComponent implements OnInit {
     );
   }
    saveTransaction() {
-    this.transactionService.createTransaction(this.transaction).subscribe(
+    this.transactionService.createTransaction(this.transaction)
+      .subscribe(
         data => console.log(data),
-          error => console.log(error));
+          error => console.log(error.error));
       }
   onSubmit() {
     this.submitted = true;
     this.saveTransaction();
    // this.gototransList();
-   // this.transacionList.push(this.budget);
   }
   }
 

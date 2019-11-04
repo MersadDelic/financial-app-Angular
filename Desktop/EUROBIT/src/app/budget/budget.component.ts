@@ -47,6 +47,6 @@ export class BudgetComponent implements OnInit {
 
   }
   gotoList() {
-    //this.router.navigate(['dashboard/:id/budgetlist']);
+    this.router.navigate(['budget/budgetlist']);
   }
 }

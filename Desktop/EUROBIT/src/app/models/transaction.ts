@@ -1,10 +1,10 @@
 export class Transaction {
-  id: number;
+  id?: number;
   description: string;
   amount: number;
-  budget: number;
- datetime: Date;
-  type: string;
-  person: number;
+  budget?: number;
+ datetime?: Date;
+  type?: string;
+  person?: number;
 
 }
