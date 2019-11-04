@@ -1,1 +1,14 @@
-<p>dashboard works!</p>
+<div class="row home-main-row">
+
+<a [routerLink]="['dashboard/budgetlist']"
+   routerLinkActive="router-link-active"
+   class="btn btn-success">My budget list<i class="fas fa-user-plus"></i> </a>
+
+
+<a style="margin-left: 10px" [routerLink]="['dashboard/createbudget']"
+   routerLinkActive="router-link-active"
+   class="btn btn-primary"> Create budget<i class="fas fa-user-plus"></i></a>
+  </div>
+
+<button class="btn btn-danger" (click)="logout()">Logout</button>
+

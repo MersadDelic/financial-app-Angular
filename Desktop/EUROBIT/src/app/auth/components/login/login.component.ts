@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   username: string;
   password: string;
 
@@ -19,16 +20,17 @@ export class LoginComponent implements OnInit {
   login() {
    this.authService.authenticate(this.username, this.password).subscribe (
     res => {
+      this.gotoDashboard();
       console.log('uspjesan login');
       console.log(res);
       localStorage.setItem('token', res.token);  // U slucaju uspjeha pohrani 'token' u localStorage //
     },
       error1 => console.log('neuspjesan login' + error1)
   );
-   this.gotoHome();
+
   }
 
-  gotoHome() {
-    this.router.navigate(['']);
+  gotoDashboard() {
+    this.router.navigate(['dashboard']);
   }
 }

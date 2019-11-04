@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
 
@@ -17,16 +16,18 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
+
   register() {
     this.authService.register(this.username, this.password).subscribe (
       res => {
-        console.log('uspjesna registracija');
+        this.gotoHome();
+        console.log('Success');
         console.log(res);
-        localStorage.setItem('token', res.token);  // U slucaju uspjeha pohrani 'token' u localStorage //
+        window.alert('Uspješno ste se registrovali');
       },
-      error1 => console.log('neuspjesna registracija' + error1)
+      error => console.log('User already exists' + error.error.text)
     );
-    this.gotoHome();
+
   }
 
   gotoHome() {

@@ -4,23 +4,23 @@
     <h3>Register a new user</h3>
     <form #registerform="ngForm" (ngSubmit)="register()">
       <div class="form-group">
-        <label for="loginUsername">Username</label>
+        <label for="registerUsername">Username</label>
         <input type="text"
                name="username"
                [(ngModel)]="username"
                required
                class="form-control"
-               id="loginUsername"
+               id="registerUsername"
                placeholder="Enter username">
       </div>
       <div class="form-group">
-        <label for="loginPassword">Password</label>
+        <label for="registerPassword">Password</label>
         <input type="password"
                name="password"
                [(ngModel)]="password"
                required
                class="form-control"
-               id="loginPassword"
+               id="registerPassword"
                placeholder="Password">
       </div>
 
