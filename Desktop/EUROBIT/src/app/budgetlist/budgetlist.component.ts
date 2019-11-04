@@ -9,7 +9,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./budgetlist.component.css']
 })
 export class BudgetlistComponent implements OnInit {
-  // budget: Budget = new Budget();
   budgetList: Budget[] = [];
   constructor(private budgetService: BudgetService, private router: Router) { }
 

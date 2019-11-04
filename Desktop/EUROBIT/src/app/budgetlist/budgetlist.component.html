@@ -5,9 +5,10 @@
     My budgets
   </h4>
   <div *ngFor="let budget of budgetList">
-  <a style="font-size: 20px; font-weight: bold; color: #295b90"
+  <a style="font-size: 20px; font-weight: bold; color: #295b90;"
      routerLink="/budget/{{budget.id}}" class="list-group-item list-group-item-action">
      {{ budget.name }}</a>
   </div>
+
 </div>
 

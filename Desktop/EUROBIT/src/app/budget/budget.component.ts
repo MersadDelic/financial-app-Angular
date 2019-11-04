@@ -42,8 +42,9 @@ export class BudgetComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.saveBudget();
-    this.gotoList();
     this.budgetList.push(this.budget);
+    this.gotoList();
+
   }
   gotoList() {
     this.router.navigate(['budgetlist']);

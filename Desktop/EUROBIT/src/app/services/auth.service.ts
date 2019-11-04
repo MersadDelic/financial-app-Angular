@@ -8,6 +8,7 @@ import {HttpClient} from '@angular/common/http';
 export class AuthService {
 
   private LOGIN_API = '/api/login';
+  private REGISTER_API = '/api/login';
 
   constructor(private http: HttpClient ) { }
 
@@ -15,6 +16,10 @@ export class AuthService {
   authenticate(username: string, password: string): Observable<any> {
     const credentials = {username, password };
     return this.http.post(this.LOGIN_API, credentials);
+  }
 
+  register(username: string, password: string): Observable<any> {
+    const credentials = {username, password };
+    return this.http.post(this.REGISTER_API, credentials);
   }
 }

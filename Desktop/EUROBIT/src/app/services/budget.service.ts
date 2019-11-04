@@ -5,11 +5,11 @@ import {Budget} from '../models/budget';
 
 
 /**
- * Authorization header sa fixsnim tokenom
+ * Authorization header sa fixsnim tokenom ---ne koristi se---
  */
 const httpOptions = {
   headers: new HttpHeaders({
-    Authorization:  `Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoibWVyc28iLCJleHAiOjE1NzI3MjA3MTl9.SXhFzEgXP-i6ZpcYAoxD43D_tCYQsTZ13Dyl02oOTG63LT56rgIdl4pYlmrU1KVLzwddsY-MDh-yK8F0XEGyOw`
+  Authorization:  `Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoibWVyc28iLCJleHAiOjE1NzI3MjA3MTl9.SXhFzEgXP-i6ZpcYAoxD43D_tCYQsTZ13Dyl02oOTG63LT56rgIdl4pYlmrU1KVLzwddsY-MDh-yK8F0XEGyOw`
   })
 };
 

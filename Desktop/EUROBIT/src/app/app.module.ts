@@ -11,6 +11,10 @@ import { HomeComponent } from './home/home.component';
 import {JwtModule} from '@auth0/angular-jwt';
 import { BudgetlistComponent } from './budgetlist/budgetlist.component';
 import { BudgetdetailsComponent } from './budgetdetails/budgetdetails.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionlistComponent } from './transactionlist/transactionlist.component';
+import { TransactiondetailsComponent } from './transactiondetails/transactiondetails.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 export function tokenGetter() {
@@ -24,6 +28,10 @@ export function tokenGetter() {
     HomeComponent,
     BudgetlistComponent,
     BudgetdetailsComponent,
+    TransactionComponent,
+    TransactionlistComponent,
+    TransactiondetailsComponent,
+    DashboardComponent,
 
   ],
   imports: [

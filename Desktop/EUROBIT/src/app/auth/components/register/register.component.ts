@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {AuthService} from '../../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,12 +10,26 @@ import {NgForm} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  username: string;
+  password: string;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+  register() {
+    this.authService.register(this.username, this.password).subscribe (
+      res => {
+        console.log('uspjesna registracija');
+        console.log(res);
+        localStorage.setItem('token', res.token);  // U slucaju uspjeha pohrani 'token' u localStorage //
+      },
+      error1 => console.log('neuspjesna registracija' + error1)
+    );
+    this.gotoHome();
+  }
+
+  gotoHome() {
+    this.router.navigate(['']);
   }
 }
