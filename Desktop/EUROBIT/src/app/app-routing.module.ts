@@ -8,13 +8,11 @@ import {TransactionComponent} from './transaction/transaction.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
- // {path: 'budgetlist', component: BudgetlistComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'dashboard/:id/budgetlist', component: BudgetlistComponent},
-  {path: 'dashboard/:id/createbudget', component: BudgetComponent},
- // { path: 'createbudget', component: BudgetComponent},
-  { path: 'budget/:id', component: BudgetdetailsComponent},
-  { path: 'budget/:id/transaction', component: TransactionComponent}
+  {path: 'budget/budgetlist', component: BudgetlistComponent},
+  {path: 'budget/createbudget', component: BudgetComponent},
+  {path: 'budget/:id', component: BudgetdetailsComponent},
+  {path: 'budget/:id/transaction', component: TransactionComponent}
 
 ];
 

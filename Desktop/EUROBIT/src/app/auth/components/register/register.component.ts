@@ -20,12 +20,12 @@ export class RegisterComponent implements OnInit {
   register() {
     this.authService.register(this.username, this.password).subscribe (
       res => {
-        this.gotoHome();
-        console.log('Success');
+       // console.log('Success');
         console.log(res);
-        window.alert('Uspješno ste se registrovali');
+       // window.alert('Uspješno ste se registrovali');
+        this.gotoHome();
       },
-      error => console.log('User already exists' + error.error.text)
+      error1 => console.log(error1.error.error)
     );
 
   }
