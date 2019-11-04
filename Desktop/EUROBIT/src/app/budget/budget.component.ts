@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {BudgetService} from '../services/budget.service';
 import {Budget} from '../models/budget';
+import {Transaction} from '../models/transaction';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class BudgetComponent implements OnInit {
     this.budgetService.getBudget(id).subscribe(
       res => {
         this.budget = res;
+
       },
       error => console.log(error)
     );
@@ -42,6 +44,7 @@ export class BudgetComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.saveBudget();
+
     this.budgetList.push(this.budget);
     this.gotoList();
 

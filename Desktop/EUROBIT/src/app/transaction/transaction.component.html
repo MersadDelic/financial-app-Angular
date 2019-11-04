@@ -13,6 +13,10 @@
       <input type="text" class="form-control" id="description" required [(ngModel)]="transaction.description" name="description">
     </div>
 
+      <div class="form-group">
+        <label for="budget">Budget</label>
+        <input type="number" class="form-control" id="budget" required [(ngModel)]="transaction.budget" name="budget">
+      </div>
 
     <button type="submit" class="btn btn-success">Submit</button>
     </div>

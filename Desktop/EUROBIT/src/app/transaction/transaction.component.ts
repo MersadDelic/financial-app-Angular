@@ -4,17 +4,16 @@ import {TransactionService} from '../services/transaction.service';
 import {Router} from '@angular/router';
 import {Budget} from '../models/budget';
 
+
 @Component({
   selector: 'app-transaction',
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
-
-
+  budget: Budget;
   transaction: Transaction = new Transaction();
   submitted = false;
-
   constructor(private transactionService: TransactionService, private router: Router) { }
 
   ngOnInit() {
@@ -37,7 +36,7 @@ export class TransactionComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.saveTransaction();
-   // this.gototransList();
+
   }
   }
 

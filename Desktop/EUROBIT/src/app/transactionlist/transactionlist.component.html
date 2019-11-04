@@ -1,10 +1,10 @@
 <div style="width: 500px; position: relative; left: 25%; top:50px" class="list-group">
   <h4 class="list-group-item list-group-item-action active">
-    My budgets
+    My Transactions
   </h4>
   <div *ngFor="let trans of transactionList">
     <a style="font-size: 20px; font-weight: bold; color: #295b90;"
-       routerLink="/budget/{{budget.id}}" class="list-group-item list-group-item-action">
+       routerLink="/budget/{{trans.id}}" class="list-group-item list-group-item-action">
       {{ trans.amount }}</a>
   </div>
 

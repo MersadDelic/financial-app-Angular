@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Transaction } from '../models/transaction';
 
 
@@ -22,6 +22,7 @@ export class TransactionService {
   getTransaction(id: number): Observable<any> {
     return this.http.get(this.TRANS_API + `/${id}`);
   }
+
   createTransaction(transaction: Transaction): Observable<Transaction> {
     console.log(transaction);
     return this.http.post<Transaction>(this.TRANS_API, transaction);
