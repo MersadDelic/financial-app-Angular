@@ -13,7 +13,11 @@ export class AuthService {
 
   jwtHelper: JwtHelperService = new JwtHelperService();
 
+  private dobaviToken = localStorage.getItem('token');
+
   constructor(private http: HttpClient) {
+
+    this.isLoggedIn();
   }
 
 
@@ -31,14 +35,14 @@ export class AuthService {
     localStorage.clear();
   }
 
-  /*isLoggedIn(): boolean {
+  isLoggedIn(): boolean {
 
-    const token = dobaviToken;
+    const token = this.dobaviToken;
 
     if (token == null) { // ako ne postoji token, vrati false
-      return false;  //ovdje vraca false i ne ide vise dalje
+      return false;  /*ovdje vraca false i ne ide vise dalje*/
     }
 
     return !this.jwtHelper.isTokenExpired(token);
-  }*/
+  }
 }

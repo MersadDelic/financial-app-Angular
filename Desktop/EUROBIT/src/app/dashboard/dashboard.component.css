@@ -5,3 +5,9 @@
   top: 100px;
   left: 37%;
 }
+
+.btn-danger {
+  position: absolute;
+  left: 47%;
+  top: 80%;
+}
