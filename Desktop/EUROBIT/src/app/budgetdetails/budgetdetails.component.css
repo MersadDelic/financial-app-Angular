@@ -10,6 +10,20 @@ h4 {
 
 .pdetail {
   font-size: 20px;
-  font-family: Verdana;
+  font-family: Verdana, serif;
   color: #e3393a;
+}
+
+.beze {
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  top: 190px;
+
+}
+
+.btn-primary {
+  position: absolute;
+
+
 }

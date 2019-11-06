@@ -14,7 +14,7 @@ export class BudgetlistComponent implements OnInit {
 
   ngOnInit() {
      this.getBudgets();
-    // this.budgetList.push(this.budget);
+
   }
   getBudgets() {
       this.budgetService.getBudgets().subscribe(

@@ -1,1 +1,10 @@
-<p>transactiondetails works!</p>
+
+<div class="bdetails" *ngIf="transaction">
+
+  <h3>Transaction Details</h3> <br>
+  <div><span><h4>Transaction description: </h4></span><p class="pdetail">{{transaction.description}}</p></div>
+  <div><span><h4>Transaction Amount: </h4></span><p class="pdetail" >{{transaction.amount}} KM</p></div>
+  <div><span><h4>Budget: </h4></span><p class="pdetail">{{transaction.budget}}</p></div>
+  <div><span><h4>Person: </h4></span><p class="pdetail">{{transaction.person}}</p></div>
+
+</div>

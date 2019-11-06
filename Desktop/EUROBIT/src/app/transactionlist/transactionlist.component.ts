@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TransactionService} from '../services/transaction.service';
 import {Transaction} from '../models/transaction';
+import {Budget} from '../models/budget';
 
 @Component({
   selector: 'app-transactionlist',
@@ -8,7 +9,6 @@ import {Transaction} from '../models/transaction';
   styleUrls: ['./transactionlist.component.css']
 })
 export class TransactionlistComponent implements OnInit {
-
   transactionList: Transaction[] = [];
   constructor(private transactionService: TransactionService) { }
 

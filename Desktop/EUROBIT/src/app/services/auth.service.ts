@@ -13,8 +13,6 @@ export class AuthService {
 
   jwtHelper: JwtHelperService = new JwtHelperService();
 
-  private dobaviToken = localStorage.getItem('token');
-
   constructor(private http: HttpClient) {
 
     this.isLoggedIn();
@@ -37,7 +35,7 @@ export class AuthService {
 
   isLoggedIn(): boolean {
 
-    const token = this.dobaviToken;
+    const token = localStorage.getItem('token');
 
     if (token == null) { // ako ne postoji token, vrati false
       return false;  /*ovdje vraca false i ne ide vise dalje*/
