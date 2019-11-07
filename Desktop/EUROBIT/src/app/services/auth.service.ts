@@ -29,6 +29,10 @@ export class AuthService {
     return this.http.post(this.REGISTER_API, credentials);
   }
 
+  assignBeneficiaryToBudget(budgetId: number, username: string): Observable<any> {
+    return this.http.put(`http://ebit-front-test.herokuapp.com/budget/${budgetId}/beneficiary`, username);
+  }
+
   logOut() {
     localStorage.clear();
   }

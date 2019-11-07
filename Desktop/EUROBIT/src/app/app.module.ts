@@ -15,6 +15,7 @@ import { TransactionComponent } from './transaction components/transaction/trans
 import { TransactionlistComponent } from './transaction components/transactionlist/transactionlist.component';
 import { TransactiondetailsComponent } from './transaction components/transactiondetails/transactiondetails.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserComponent } from './user/user.component';
 
 
 export function tokenGetter() {
@@ -32,6 +33,7 @@ export function tokenGetter() {
     TransactionlistComponent,
     TransactiondetailsComponent,
     DashboardComponent,
+    UserComponent,
 
   ],
   imports: [
