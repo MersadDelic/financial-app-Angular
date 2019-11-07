@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Budget } from '../models/budget';
-import {BudgetService} from '../services/budget.service';
+import { Budget } from '../../models/budget';
+import {BudgetService} from '../../services/budget.service';
 import {Router} from '@angular/router';
 
 @Component({

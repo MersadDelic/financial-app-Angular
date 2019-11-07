@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Transaction} from '../models/transaction';
-import {TransactionService} from '../services/transaction.service';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {Transaction} from '../../models/transaction';
+import {TransactionService} from '../../services/transaction.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Budget} from '../models/budget';
+import {Budget} from '../../models/budget';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {Budget} from '../models/budget';
   styleUrls: ['./transaction.component.css']
 })
 export class TransactionComponent implements OnInit {
-
+//  transactionList: Transaction[] = [];
   budgetId: number;
   transaction: Transaction = new Transaction(); // kreira novi objekat 'transaction' i doda je u listu
   submitted = false;

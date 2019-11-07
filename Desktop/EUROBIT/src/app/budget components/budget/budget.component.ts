@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BudgetService} from '../services/budget.service';
-import {Budget} from '../models/budget';
-import {Transaction} from '../models/transaction';
+import {BudgetService} from '../../services/budget.service';
+import {Budget} from '../../models/budget';
+import {Transaction} from '../../models/transaction';
 
 
 @Component({
@@ -11,8 +11,9 @@ import {Transaction} from '../models/transaction';
   styleUrls: ['./budget.component.css']
 })
 export class BudgetComponent implements OnInit {
- transaction: Transaction;
+  transaction: Transaction;
  // budgetList: Budget [] = [];
+  // budgetId: number;
   budget: Budget = new Budget();  /* new Budget() --> kreira prazan objekat 'budget' */
   submitted = false;
 
@@ -47,7 +48,7 @@ export class BudgetComponent implements OnInit {
     this.submitted = true;
     this.saveBudget();
   //  this.budgetList.push(this.budget);
-    this.gotoList();
+   // this.gotoList();
 
   }
   gotoList() {

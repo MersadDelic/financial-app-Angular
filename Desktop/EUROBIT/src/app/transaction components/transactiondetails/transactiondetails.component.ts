@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Transaction} from '../models/transaction';
-import {Budget} from '../models/budget';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {Transaction} from '../../models/transaction';
+import {Budget} from '../../models/budget';
 import {ActivatedRoute} from '@angular/router';
-import {TransactionService} from '../services/transaction.service';
+import {TransactionService} from '../../services/transaction.service';
 
 @Component({
   selector: 'app-transactiondetails',

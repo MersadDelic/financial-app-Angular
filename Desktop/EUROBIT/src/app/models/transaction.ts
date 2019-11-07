@@ -4,7 +4,7 @@ export class Transaction {
   amount: number;
   datetime?: Date;
   person?: number;
-  budget?: number;
+  budget: number;
   type?: string;
 
 

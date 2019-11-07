@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import { BudgetlistComponent } from './budgetlist/budgetlist.component';
-import {BudgetComponent} from './budget/budget.component';
-import {BudgetdetailsComponent} from './budgetdetails/budgetdetails.component';
-import {TransactionComponent} from './transaction/transaction.component';
+import { BudgetlistComponent } from './budget components/budgetlist/budgetlist.component';
+import {BudgetComponent} from './budget components/budget/budget.component';
+import {BudgetdetailsComponent} from './budget components/budgetdetails/budgetdetails.component';
+import {TransactionComponent} from './transaction components/transaction/transaction.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {TransactiondetailsComponent} from './transactiondetails/transactiondetails.component';
-import {TransactionlistComponent} from './transactionlist/transactionlist.component';
+import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
+import {TransactionlistComponent} from './transaction components/transactionlist/transactionlist.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},

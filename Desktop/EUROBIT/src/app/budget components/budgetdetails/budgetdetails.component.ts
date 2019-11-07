@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Budget} from '../models/budget';
-import {BudgetService} from '../services/budget.service';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {Budget} from '../../models/budget';
+import {BudgetService} from '../../services/budget.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class BudgetdetailsComponent implements OnInit {
 
-    budget: Budget;
+  budget: Budget;
   constructor(private route: ActivatedRoute,
               private budgetService: BudgetService) { }
 
