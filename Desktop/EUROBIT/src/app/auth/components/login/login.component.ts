@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       console.log('uspjesan login');
       console.log(res);
       localStorage.setItem('token', res.token);  // U slucaju uspjeha pohrani 'token' u localStorage //
+      localStorage.setItem('login', this.username);
     },
       error1 => console.log('neuspjesan login' + error1)
   );

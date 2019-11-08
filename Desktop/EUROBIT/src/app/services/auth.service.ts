@@ -38,7 +38,10 @@ export class AuthService {
     if (token == null) { // ako ne postoji token, vrati false
       return false;  /*ovdje vraca false i ne ide vise dalje*/
     }
-
     return !this.jwtHelper.isTokenExpired(token);
+  }
+
+  getCurrentUser() {
+    return localStorage.getItem('login');
   }
 }

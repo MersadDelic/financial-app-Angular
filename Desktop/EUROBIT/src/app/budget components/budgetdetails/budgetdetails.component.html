@@ -1,15 +1,14 @@
-<div class="merso">
-  <a style="font-size: 20px; color: #f0f3f6"
-     routerLink="/budget/{{budget.id}}/addtransaction" class="btn btn-primary">
-    Create a new transaction</a>
-<br>
-  <a style="font-size: 20px; color: #f0f3f6; margin-top: 20px;"
-     routerLink="/budget/{{budget.id}}/addbeneficiary" class="btn btn-primary">
-    Add beneficiary</a>
-</div>
-
-
 <div class="bdetails" *ngIf="budget">
+
+  <div class="merso">
+    <a style="font-size: 20px; color: #f0f3f6"
+       routerLink="/budget/{{budget.id}}/addtransaction" class="btn btn-primary">
+      Create a new transaction</a>
+    <br>
+    <a style="font-size: 20px; color: #f0f3f6; margin-top: 20px;"
+       routerLink="/budget/{{budget.id}}/addbeneficiary" class="btn btn-primary">
+      Add beneficiary</a>
+  </div>
 
   <h3>{{budget.name | uppercase}} Details</h3> <br>
   <div><span><h4>Budget name: </h4></span>
@@ -23,11 +22,10 @@
 
   <div><span><h4>Budget users: </h4></span>
     <div *ngFor="let budgets of budget.budget_users">
-     <p class="pdetail"> {{ budgets.name }}</p>
+      <p class="pdetail"> {{ budgets.name }}</p>
     </div>
 
   </div>
-
 
 
 </div>
