@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Budget} from '../models/budget';
 
@@ -24,5 +24,10 @@ export class BudgetService {
 
   createBudget(budget: Budget): Observable<Budget> {
     return this.http.post<Budget>(this.BUDGET_API, budget);
+  }
+
+  addBeneficiary(budgetId: number, beneficiary: number): Observable<any> {
+    const ben = {beneficiary: `${beneficiary}`};
+    return this.http.put(this.BUDGET_API + `/${budgetId}/beneficiary`, ben);
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {JwtHelperService} from '@auth0/angular-jwt';
@@ -14,8 +14,6 @@ export class AuthService {
   jwtHelper: JwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient) {
-
-    this.isLoggedIn();
   }
 
 
@@ -27,10 +25,6 @@ export class AuthService {
   register(username: string, password: string): Observable<any> {
     const credentials = {username, password};
     return this.http.post(this.REGISTER_API, credentials);
-  }
-
-  assignBeneficiaryToBudget(budgetId: number, username: string): Observable<any> {
-    return this.http.put(`http://ebit-front-test.herokuapp.com/budget/${budgetId}/beneficiary`, username);
   }
 
   logOut() {

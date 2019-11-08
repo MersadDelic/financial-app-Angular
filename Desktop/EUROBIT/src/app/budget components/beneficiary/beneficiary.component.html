@@ -2,8 +2,8 @@
 <div style="width: 400px; position: relative; left: 28%">
   <form #userForm="ngForm" (ngSubmit)="onSubmit();  userForm.reset()">
     <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="username" name="name">
+      <label for="id">Beneficiary ID</label>
+      <input type="number" class="form-control" id="id" required [(ngModel)]="beneficiary" name="id">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>

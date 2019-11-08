@@ -1,21 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { BudgetComponent } from './budget components/budget/budget.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {AppComponent} from './app.component';
+import {BudgetComponent} from './budget components/budget/budget.component';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {JwtModule} from '@auth0/angular-jwt';
-import { BudgetlistComponent } from './budget components/budgetlist/budgetlist.component';
-import { BudgetdetailsComponent } from './budget components/budgetdetails/budgetdetails.component';
-import { TransactionComponent } from './transaction components/transaction/transaction.component';
-import { TransactionlistComponent } from './transaction components/transactionlist/transactionlist.component';
-import { TransactiondetailsComponent } from './transaction components/transactiondetails/transactiondetails.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
+import {BudgetlistComponent} from './budget components/budgetlist/budgetlist.component';
+import {BudgetdetailsComponent} from './budget components/budgetdetails/budgetdetails.component';
+import {TransactionComponent} from './transaction components/transaction/transaction.component';
+import {TransactionlistComponent} from './transaction components/transactionlist/transactionlist.component';
+import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {AuthGuard} from "./auth/auth.guard";
+import {BeneficiaryComponent} from './budget components/beneficiary/beneficiary.component';
 
 
 export function tokenGetter() {
@@ -33,7 +34,7 @@ export function tokenGetter() {
     TransactionlistComponent,
     TransactiondetailsComponent,
     DashboardComponent,
-    UserComponent,
+    BeneficiaryComponent,
 
   ],
   imports: [
@@ -54,7 +55,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
