@@ -48,10 +48,10 @@ export class BudgetComponent implements OnInit {
     this.submitted = true;
     this.saveBudget();
   //  this.budgetList.push(this.budget);
-   // this.gotoList();
+    this.gotoList();
 
   }
   gotoList() {
-    this.router.navigate(['budget/budgetlist']);
+    this.router.navigate(['dashboard/budgetlist']);
   }
 }

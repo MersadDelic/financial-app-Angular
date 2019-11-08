@@ -8,13 +8,13 @@ import {TransactionComponent} from './transaction components/transaction/transac
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
 import {TransactionlistComponent} from './transaction components/transactionlist/transactionlist.component';
-import {AuthGuard} from "./auth/auth.guard";
-import {BeneficiaryComponent} from "./budget components/beneficiary/beneficiary.component";
+import {AuthGuard} from './auth/auth.guard';
+import {BeneficiaryComponent} from './budget components/beneficiary/beneficiary.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'budget/budgetlist', component: BudgetlistComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard/budgetlist', component: BudgetlistComponent, canActivate: [AuthGuard]},
   {path: 'budget/createbudget', component: BudgetComponent, canActivate: [AuthGuard]},
   {path: 'budget/:id', component: BudgetdetailsComponent, canActivate: [AuthGuard]},
   {path: 'budget/:id/addtransaction', component: TransactionComponent, canActivate: [AuthGuard]},

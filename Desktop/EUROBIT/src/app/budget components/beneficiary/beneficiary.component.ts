@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BudgetService} from "../../services/budget.service";
-import {Location} from "@angular/common";
+import {BudgetService} from '../../services/budget.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-user',

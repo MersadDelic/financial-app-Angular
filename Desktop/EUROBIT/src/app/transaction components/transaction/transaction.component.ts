@@ -44,7 +44,7 @@ export class TransactionComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['budget' + `/${(this.budgetId)}/`]);
+    this.router.navigate(['dashboard/budgetlist']);
 
   }
 }
