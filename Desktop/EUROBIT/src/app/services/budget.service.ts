@@ -27,7 +27,7 @@ export class BudgetService {
   }
 
   addBeneficiary(budgetId: number, beneficiary: number): Observable<any> {
-    const ben = {beneficiary: `${beneficiary}`};
+    const ben = {beneficiary};
     return this.http.put(this.BUDGET_API + `/${budgetId}/beneficiary`, ben);
   }
 }

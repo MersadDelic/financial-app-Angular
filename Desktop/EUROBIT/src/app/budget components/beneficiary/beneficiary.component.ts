@@ -25,8 +25,8 @@ export class BeneficiaryComponent implements OnInit {
   addBeneficiaryToBudget() {
     this.budgetService.addBeneficiary(this.budgetId, this.beneficiary)
       .subscribe(
-        data => console.log(data),
-        error => console.log(error));
+        data => console.log('uspjesno dodan korisnik buzetu: ' + JSON.stringify(data)),
+        error => console.log('greska pri dodavanja korisnika budzetu: ' + error.error));
   }
 
   onSubmit() {

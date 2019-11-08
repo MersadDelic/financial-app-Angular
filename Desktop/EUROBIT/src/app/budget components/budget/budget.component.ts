@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BudgetService} from '../../services/budget.service';
 import {Budget} from '../../models/budget';
@@ -40,7 +40,7 @@ export class BudgetComponent implements OnInit {
   saveBudget() {
     this.budgetService.createBudget(this.budget)
       .subscribe(
-        data => console.log(data),
+        () => this.gotoList(),
         error => console.log(error));
   }
 
