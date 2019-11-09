@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AuthService} from "./services/auth.service";
-import {Router} from "@angular/router";
+import {AuthService} from './services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +14,7 @@ export class AppComponent {
   }
 
   getCurrentUser() {
-    if (this.authService.isLoggedIn())
       return this.authService.getCurrentUser();
-    return "";
   }
 
   logout(): void {

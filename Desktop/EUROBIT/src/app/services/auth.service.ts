@@ -39,9 +39,20 @@ export class AuthService {
       return false;  /*ovdje vraca false i ne ide vise dalje*/
     }
     return !this.jwtHelper.isTokenExpired(token);
+
+  /*public isLoggedin(){
+
+         if (jwtHelper.isTokenExpired(token) == true) {
+
+         return false;
+                        }
+                           else return true;*/
   }
 
   getCurrentUser() {
-    return localStorage.getItem('login');
+    if (this.isLoggedIn()) {
+      return localStorage.getItem('login');
+    }
+    return '';
   }
 }

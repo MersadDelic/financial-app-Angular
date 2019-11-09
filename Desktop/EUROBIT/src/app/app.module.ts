@@ -15,7 +15,7 @@ import {TransactionComponent} from './transaction components/transaction/transac
 import {TransactionlistComponent} from './transaction components/transactionlist/transactionlist.component';
 import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {AuthGuard} from "./auth/auth.guard";
+import {AuthGuard} from './auth/auth.guard';
 import {BeneficiaryComponent} from './budget components/beneficiary/beneficiary.component';
 
 
@@ -58,4 +58,5 @@ export function tokenGetter() {
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
