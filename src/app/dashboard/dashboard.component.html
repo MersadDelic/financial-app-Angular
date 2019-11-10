@@ -2,11 +2,14 @@
 
 <a [routerLink]="['/dashboard/budgetlist']"
    routerLinkActive="router-link-active"
-   class="btn btn-success">Go to my budget list<i class="fas fa-user-plus"></i> </a>
+   class="btn btn-success">My budgets<i class="fas fa-user-plus"></i> </a>
 
-<a style="margin-left: 10px" [routerLink]="['/budget/createbudget']"
-   routerLinkActive="router-link-active"
-   class="btn btn-primary"> Create budget<i class="fas fa-user-plus"></i></a>
+
+  <a [routerLink]="['/dashboard/transactionlist']" style="margin-left: 15px"
+     routerLinkActive="router-link-active"
+     class="btn btn-success">My transactions<i class="fas fa-user-plus"></i> </a>
+
+
 
 </div>
 

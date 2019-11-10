@@ -3,6 +3,8 @@ import {Transaction} from '../../models/transaction';
 import {TransactionService} from '../../services/transaction.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Budget} from '../../models/budget';
+import {BudgetService} from '../../services/budget.service';
+import {error} from 'util';
 
 
 @Component({
@@ -12,29 +14,39 @@ import {Budget} from '../../models/budget';
 })
 export class TransactionComponent implements OnInit {
 //  transactionList: Transaction[] = [];
+  budgetList: Budget[] = [];
+  // selectedBudget: Budget;
   budgetId: number;
+
   transaction: Transaction = new Transaction(); // kreira novi objekat 'transaction' i doda je u listu
   submitted = false;
 
   constructor(private transactionService: TransactionService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private budgetService: BudgetService) {
   }
 
   ngOnInit() {
-    this.budgetId = +this.route.snapshot.paramMap.get('id');
-    this.transaction.budget = this.budgetId;
-
+    this.getAllBudgets();
   }
 
+  /*this.budgetId = +this.route.snapshot.paramMap.get('id');
+  this.transaction.budget = this.budgetId;*/
 
   saveTransaction() {
+
+    this.transaction.budget = this.budgetId;
     this.transactionService.createTransaction(this.transaction)
       .subscribe(
         data => console.log(data),
-        error => console.log(error.error));
+        error1 => console.log(error1.error));
+  }
 
-
+  getAllBudgets() {
+    this.budgetService.getBudgets().subscribe(
+      list => this.budgetList = list,
+      error1 => console.log(error1));
   }
 
   onSubmit() {
@@ -44,7 +56,7 @@ export class TransactionComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['dashboard/budgetlist']);
+    this.router.navigate(['dashboard/transactionlist']);
 
   }
 }

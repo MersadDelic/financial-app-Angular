@@ -1,33 +1,25 @@
-<!--<div style="width: 500px; position: relative; left: 25%; top:50px" class="list-group">
-  <h4 class="list-group-item list-group-item-action active">
-    My Transactions
-  </h4>
-  <div *ngFor="let transaction of transactionList">
-    <a style="font-size: 20px; font-weight: bold; color: #295b90;"
-       routerLink="/transaction/{{transaction.id}}" class="list-group-item list-group-item-action">
-      {{ transaction.amount }}<span class="desc">{{ transaction.description }}</span></a>
-  </div>
 
-</div>-->
 
-<table class="table table-hover table-light">
+<a style="text-align: center; position: relative; left: 42%;
+top: 30px;" [routerLink]="['/transactionlist/addtransaction']"
+   routerLinkActive="router-link-active"
+   class="btn btn-primary"> Create a new transaction<i class="fas fa-user-plus"></i></a>
+
+<table class="table table-striped" style="margin-top: 50px">
   <thead>
   <tr>
-    <th scope="col">-</th>
-    <th scope="col">Amount</th>
-    <th scope="col">Description</th>
-    <th scope="col">Action</th>
+    <th scope="col"> </th>
+    <th scope="col"> <h4> Amount </h4></th>
+    <th scope="col"><h4> Description </h4></th>
+    <th scope="col"><h4> Action </h4></th>
 
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let transaction of transactionList" class="home-main-row">
-    <th scope="row">-</th>
-
-    <td>{{ transaction.amount }}</td>
-
-    <td>{{ transaction.description }}</td>
-
+    <th scope="row"> </th>
+    <td><h5>{{ transaction.amount }}</h5></td>
+    <td><h5>{{ transaction.description }}</h5></td>
     <td><a class="btn btn-primary"
       routerLink="/transaction/{{transaction.id}}">Details</a></td>
   </tr>

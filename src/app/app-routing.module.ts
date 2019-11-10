@@ -15,11 +15,11 @@ const routes: Routes = [
   {path: '', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'dashboard/budgetlist', component: BudgetlistComponent, canActivate: [AuthGuard]},
-  {path: 'budget/createbudget', component: BudgetComponent, canActivate: [AuthGuard]},
+  {path: 'budgetlist/addbudget', component: BudgetComponent, canActivate: [AuthGuard]},
   {path: 'budget/:id', component: BudgetdetailsComponent, canActivate: [AuthGuard]},
-  {path: 'budget/:id/addtransaction', component: TransactionComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard/transactionlist', component: TransactionlistComponent, canActivate: [AuthGuard]},
+  {path: 'transactionlist/addtransaction', component: TransactionComponent, canActivate: [AuthGuard]},
   {path: 'budget/:id/addbeneficiary', component: BeneficiaryComponent, canActivate: [AuthGuard]},
-  {path: 'budget/:id/transactionlist', component: TransactionlistComponent, canActivate: [AuthGuard]},
   {path: 'transaction/:id', component: TransactiondetailsComponent, canActivate: [AuthGuard]}
 
 ];
