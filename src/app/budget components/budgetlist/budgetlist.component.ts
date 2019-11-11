@@ -24,7 +24,6 @@ export class BudgetlistComponent implements OnInit {
     this.budgetService.getBudgets().subscribe(
       res => {
         this.budgetList = res;
-        this.budgetList.push(this.budget);
       },
       error1 => console.log(error1)
     );
@@ -32,11 +31,9 @@ export class BudgetlistComponent implements OnInit {
   saveBudget() {
     this.budgetService.createBudget(this.budget)
       .subscribe(
-        () => this.gotoList(),
+        () =>  this.budgetList.push(this.budget),
         error => console.log(error));
   }
 
-  gotoList() {
-    this.router.navigate(['dashboard/budgetlist']);
-  }
+
 }

@@ -37,7 +37,7 @@ export class TransactionlistComponent implements OnInit {
     this.transactionService.createTransaction(this.transaction)
       .subscribe(
         data => { console.log(data),
-        this.gotoList(); },
+          this.transactionList.push(this.transaction); },
 
         error1 => console.log(error1.error));
   }
@@ -52,13 +52,9 @@ export class TransactionlistComponent implements OnInit {
     this.transactionService.getTransactions().subscribe(
       res => {
         this.transactionList = res;
-        this.transactionList.push(this.transaction);
       },
       error1 => console.log(error1)
     );
   }
-  gotoList() {
-    this.router.navigate(['dashboard/transactionlist']);
 
-  }
 }
