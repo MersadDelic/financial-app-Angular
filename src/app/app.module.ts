@@ -16,6 +16,8 @@ import {TransactionlistComponent} from './transaction components/transactionlist
 import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './auth/auth.guard';
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export function tokenGetter() {
   return localStorage.getItem('token');  // Dobavljanje tokena iz localStorage //
@@ -40,6 +42,9 @@ export function tokenGetter() {
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
+
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
 
     /**
      * Konfiguracija za JWT autentikaciju !
