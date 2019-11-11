@@ -24,7 +24,7 @@ export class AuthService {
 
   register(username: string, password: string): Observable<any> {
     const credentials = {username, password};
-    return this.http.post(this.REGISTER_API, credentials);
+    return this.http.post(this.REGISTER_API, credentials, {responseType: 'text'});
   }
 
   logOut() {

@@ -2,9 +2,10 @@
 
   <div class="merso">
 
-    <a style="font-size: 20px; color: #f0f3f6; margin-top: 20px;"
-       routerLink="/budget/{{budget.id}}/addbeneficiary" class="btn btn-primary">
-      Add beneficiary</a>
+    <button type="button" class="btn btn-primary" style="margin-top: 20px;"
+            data-toggle="modal"
+            data-target="#addBeneficiaryModal">Add beneficiary
+    </button>
   </div>
 
   <h3>{{budget.name | uppercase}} Details</h3> <br>
@@ -24,7 +25,38 @@
 
   </div>
 
+  <!-- ADD BENEFICIARY TO THE BUDGET Modal-->
+  <div class="modal fade" id="addBeneficiaryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
 
+        <!--HEADER-->
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add beneficiary</h5>
+          <button class="close" id="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <!--BODY-->
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="userId">Beneficiary ID</label>
+              <input type="number" class="form-control" id="userId" required [(ngModel)]="beneficiaryId" name="userId">
+            </div>
+          </form>
+        </div>
+
+        <!--FOOTER-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="btn_podnesi_zahtjev" data-dismiss="modal"
+                  (click)="onSubmitBeneficiary()">OK
+          </button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-

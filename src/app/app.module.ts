@@ -16,8 +16,6 @@ import {TransactionlistComponent} from './transaction components/transactionlist
 import {TransactiondetailsComponent} from './transaction components/transactiondetails/transactiondetails.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './auth/auth.guard';
-import {BeneficiaryComponent} from './budget components/beneficiary/beneficiary.component';
-
 
 export function tokenGetter() {
   return localStorage.getItem('token');  // Dobavljanje tokena iz localStorage //
@@ -34,8 +32,6 @@ export function tokenGetter() {
     TransactionlistComponent,
     TransactiondetailsComponent,
     DashboardComponent,
-    BeneficiaryComponent,
-
   ],
   imports: [
     BrowserModule,

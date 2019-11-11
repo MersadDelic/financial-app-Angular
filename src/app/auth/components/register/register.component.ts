@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../services/auth.service';
 import {Router} from '@angular/router';
 
@@ -18,19 +18,16 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.authService.register(this.username, this.password).subscribe (
-      res => {
-       // console.log('Success');
-        console.log(res);
-       // window.alert('Uspješno ste se registrovali');
-        this.gotoHome();
+    this.authService.register(this.username, this.password).subscribe(
+      () => {
+        console.log('Uspjesno ste se registrovali');
+        this.gotoLogin();
       },
-      error1 => console.log(error1.error.error)
+      error => console.error(error.error)
     );
-
   }
 
-  gotoHome() {
-    this.router.navigate(['']);
+  gotoLogin() {
+    this.router.navigate(['login']);
   }
 }
