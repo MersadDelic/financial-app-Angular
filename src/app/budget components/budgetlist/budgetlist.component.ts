@@ -10,19 +10,33 @@ import {Router} from '@angular/router';
 })
 export class BudgetlistComponent implements OnInit {
   budgetList: Budget[] = [];
-  constructor(private budgetService: BudgetService, private router: Router) { }
+  budget: Budget = new Budget();
+
+  constructor(private budgetService: BudgetService, private router: Router) {
+  }
 
   ngOnInit() {
-     this.getBudgets();
+    this.getBudgets();
 
   }
-  getBudgets() {
-      this.budgetService.getBudgets().subscribe(
-        res => {
-          this.budgetList = res;
-        },
-        error1 => console.log(error1)
-      );
-    }
 
+  getBudgets() {
+    this.budgetService.getBudgets().subscribe(
+      res => {
+        this.budgetList = res;
+        this.budgetList.push(this.budget);
+      },
+      error1 => console.log(error1)
+    );
+  }
+  saveBudget() {
+    this.budgetService.createBudget(this.budget)
+      .subscribe(
+        () => this.gotoList(),
+        error => console.log(error));
+  }
+
+  gotoList() {
+    this.router.navigate(['dashboard/budgetlist']);
+  }
 }

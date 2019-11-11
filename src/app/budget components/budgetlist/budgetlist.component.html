@@ -1,9 +1,16 @@
 
+<div class="merso">
 
+  <button type="button" class="btn btn-primary" style="margin-top: 20px;"
+          data-toggle="modal"
+          data-target="#addTransaction">Add Budget
+  </button>
+</div>
+<!--
 <a style="text-align: center; position: relative; left: 44%;
 top: 30px;" [routerLink]="['/budgetlist/addbudget']"
    routerLinkActive="router-link-active"
-   class="btn btn-primary"> Create budget<i class="fas fa-user-plus"></i></a>
+   class="btn btn-primary"> Create budget<i class="fas fa-user-plus"></i></a>-->
 
 
 <div style="width: 500px; position: relative; left: 25%; top:50px" class="list-group">
@@ -19,4 +26,51 @@ top: 30px;" [routerLink]="['/budgetlist/addbudget']"
 </div>
 
 
+<!-- ADD BUDGET-->
+<div class="modal fade" id="addTransaction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
 
+      <!--HEADER-->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Budget</h5>
+        <button class="close" id="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <!--BODY-->
+      <div class="modal-body">
+        <form>
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="budget.name" name="name">
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" required [(ngModel)]="budget.amount" name="amount">
+          </div>
+
+          <div class="form-group">
+            <label for="date_from">Date From</label>
+            <input type="date"  class="form-control" id="date_from" required [(ngModel)]="budget.date_from" name="date_from">
+          </div>
+
+          <div class="form-group">
+            <label for="date_to">Date To</label>
+            <input type="date" class="form-control" id="date_to" required [(ngModel)]="budget.date_to" name="date_to">
+          </div>
+
+        </form>
+        <!--FOOTER-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="btn_podnesi_zahtjev" data-dismiss="modal"
+                  (click)="saveBudget()">OK
+          </button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div></div></div>

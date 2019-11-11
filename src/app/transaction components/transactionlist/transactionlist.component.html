@@ -1,9 +1,15 @@
 
+<div class="merso">
 
-<a style="text-align: center; position: relative; left: 42%;
+  <button type="button" class="btn btn-primary" style="margin-top: 20px;"
+          data-toggle="modal"
+          data-target="#addTransaction">Add Transaction
+  </button>
+</div>
+<!--<a style="text-align: center; position: relative; left: 42%;
 top: 30px;" [routerLink]="['/transactionlist/addtransaction']"
    routerLinkActive="router-link-active"
-   class="btn btn-primary"> Create a new transaction<i class="fas fa-user-plus"></i></a>
+   class="btn btn-primary"> Create a new transaction<i class="fas fa-user-plus"></i></a>-->
 
 <table class="table table-striped" style="margin-top: 50px">
   <thead>
@@ -27,3 +33,51 @@ top: 30px;" [routerLink]="['/transactionlist/addtransaction']"
 
   </tbody>
 </table>
+
+
+<!-- ADD TRANSACTION-->
+<div class="modal fade" id="addTransaction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <!--HEADER-->
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Transaction</h5>
+        <button class="close" id="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <!--BODY-->
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" required [(ngModel)]="transaction.amount" name="amount">
+          </div>
+
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" required [(ngModel)]="transaction.description" name="description">
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget</label>
+        <select [(ngModel)]="budgetId" class="form-control" name="budget" id="budget">
+          <option value="" disabled>Choose your budget</option>
+          <option *ngFor="let bud of budgetList" [ngValue]="bud.id">{{bud.name}}</option>
+        </select>
+      </div>
+      </form>
+      <!--FOOTER-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn_podnesi_zahtjev" data-dismiss="modal"
+                (click)="saveTransaction()">OK
+        </button>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
