@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Budget } from '../../models/budget';
+import {Component, OnInit} from '@angular/core';
+import {Budget} from '../../models/budget';
 import {BudgetService} from '../../services/budget.service';
 import {Router} from '@angular/router';
 
@@ -31,9 +31,7 @@ export class BudgetlistComponent implements OnInit {
   saveBudget() {
     this.budgetService.createBudget(this.budget)
       .subscribe(
-        () =>  this.budgetList.push(this.budget),
+        createdBudget => this.budgetList.push(createdBudget),
         error => console.log(error));
   }
-
-
 }

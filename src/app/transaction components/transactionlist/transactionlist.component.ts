@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TransactionService} from '../../services/transaction.service';
 import {Transaction} from '../../models/transaction';
 import {Budget} from '../../models/budget';
@@ -36,9 +36,10 @@ export class TransactionlistComponent implements OnInit {
     this.transaction.budget = this.budgetId;
     this.transactionService.createTransaction(this.transaction)
       .subscribe(
-        data => { console.log(data),
-          this.transactionList.push(this.transaction); },
-
+        createdTransaction => {
+          console.log(createdTransaction);
+          this.transactionList.push(createdTransaction);
+        },
         error1 => console.log(error1.error));
   }
 
@@ -56,5 +57,4 @@ export class TransactionlistComponent implements OnInit {
       error1 => console.log(error1)
     );
   }
-
 }
